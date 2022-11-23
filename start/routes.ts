@@ -24,10 +24,6 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.group(() => {
-  Route.post('/users', async ({ request }) => {
-    return { success: true, message: 'User created', data: request.all() }
-  })
+Route.post('/users', async ({ request }) => {
+  return { success: true, message: 'User created', data: request.all() }
 })
-  .prefix('/api/v1')
-  .middleware('treblle')
